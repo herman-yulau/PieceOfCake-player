@@ -47,6 +47,8 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
 
+    qmlRegisterSingletonType(QUrl("qrc:/Style.qml"), "PieceOfCake.Style", 1, 0, "Style");
+
     int ret;
 
     gst_init (&argc, &argv);

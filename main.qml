@@ -8,6 +8,16 @@ Window {
     width: 640
     height: 480
     title: qsTr("Piece of Cake")
+    color: "gray"
+
+    Rectangle {
+        id: background
+        anchors.fill: parent
+        gradient: Gradient {
+            GradientStop { position: 0.0; color: Style.topColor }
+            GradientStop { position: 1.0; color: Style.bottomColor }
+        }
+    }
 
     Item {
         anchors.fill: parent
@@ -15,7 +25,7 @@ Window {
         GstGLVideoItem {
             id: video
             objectName: "videoItem"
-            anchors.fill: parent
+//            anchors.fill: parent
 
             MouseArea {
                 id: mousearea
@@ -27,5 +37,17 @@ Window {
                 }
             }
         }
+    }
+
+    ControlPanel {
+        anchors.bottom: parent.bottom
+        anchors.horizontalCenter: parent.horizontalCenter
+        height: 100
+        width: 500
+    }
+
+    Shortcut {
+       sequence: StandardKey.Quit
+       onActivated: Qt.quit()
     }
 }

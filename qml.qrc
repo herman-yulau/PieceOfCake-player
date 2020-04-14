@@ -1,5 +1,16 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>ControlPanel.qml</file>
+        <file>Style.qml</file>
+        <file>icons/gradient/icons8-subtitles-64.png</file>
+        <file>icons/gradient/icons8-audio-stream-64.png</file>
+        <file>icons/gradient/icons8-pause-64.png</file>
+        <file>icons/gradient/icons8-play-64.png</file>
+        <file>icons/gradient/icons8-resume-button-64.png</file>
+        <file>icons/gradient/icons8-settings-64.png</file>
+        <file>icons/gradient/icons8-back-to-start-64.png</file>
+        <file>icons/gradient/icons8-new-video-file-64.png</file>
+        <file>ControlButton.qml</file>
     </qresource>
 </RCC>
