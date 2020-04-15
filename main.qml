@@ -42,7 +42,7 @@ Window {
     ControlPanel {
         anchors.bottom: parent.bottom
         anchors.horizontalCenter: parent.horizontalCenter
-        height: 100
+        height: 80
         width: 500
     }
 
