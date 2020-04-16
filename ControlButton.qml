@@ -8,6 +8,8 @@ Button {
 
     contentItem: Image {
         id: image
+        anchors.fill: parent
+        anchors.margins: 3
         fillMode: Image.PreserveAspectFit
     }
 

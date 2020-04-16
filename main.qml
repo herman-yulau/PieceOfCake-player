@@ -41,9 +41,10 @@ Window {
 
     ControlPanel {
         anchors.bottom: parent.bottom
-        anchors.horizontalCenter: parent.horizontalCenter
-        height: 80
-        width: 500
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.margins: 3
+        height: 90
     }
 
     Shortcut {

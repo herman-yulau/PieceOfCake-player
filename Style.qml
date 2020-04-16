@@ -3,8 +3,8 @@ import QtQuick 2.0
 
 QtObject {
 
-    property color topColor: "#1c6cff"
-    property color bottomColor: "#c822ff"
+    property color topColor: "#09188f"
+    property color bottomColor: "#62098f"
     property color ctrlColor: "#143ca8"
 
     property int ctrlIconSize: 48
