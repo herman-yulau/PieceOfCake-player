@@ -17,5 +17,6 @@
         <file>icons/gradient/icons8-low-volume-64.png</file>
         <file>icons/gradient/icons8-mute-audio-64.png</file>
         <file>Timeline.qml</file>
+        <file>TimeBox.qml</file>
     </qresource>
 </RCC>

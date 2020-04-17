@@ -22,6 +22,7 @@ Item {
         anchors.top: parent.top
         anchors.left: parent.left
         anchors.right: parent.right
+        anchors.topMargin: 10
     }
 
     RowLayout {
@@ -43,11 +44,18 @@ Item {
             Layout.preferredWidth: Style.ctrlIconSize * 1.2
             imageSrc: Style.icons.play
         }
+
+        TimeBox {
+            id: timebox
+            Layout.preferredHeight: 40
+            Layout.preferredWidth: 210
+        }
     }
 
     RowLayout {
         id: rowTools
 
+//        anchors.top: timeline.bottom
         anchors.bottom: parent.bottom
         anchors.right: parent.right
 
