@@ -19,24 +19,10 @@ Window {
         }
     }
 
-    Item {
+    GstGLVideoItem {
+        id: video
+        objectName: "videoItem"
         anchors.fill: parent
-
-        GstGLVideoItem {
-            id: video
-            objectName: "videoItem"
-//            anchors.fill: parent
-
-            MouseArea {
-                id: mousearea
-                anchors.fill: parent
-                hoverEnabled: true
-                onClicked: {
-                    console.log("hit")
-                    startPlay.run();
-                }
-            }
-        }
     }
 
     ControlPanel {
@@ -45,6 +31,8 @@ Window {
         anchors.right: parent.right
         anchors.margins: 3
         height: 80
+
+        onPlayClicked: player.play()
     }
 
     Shortcut {

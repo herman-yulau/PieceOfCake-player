@@ -1,8 +1,10 @@
-import QtQuick 2.0
+import QtQuick 2.12
 import QtQuick.Controls 2.12
 
 Button {
     id: controlButton
+
+    signal clicked()
 
     property alias imageSrc: image.source
 
@@ -12,7 +14,6 @@ Button {
         anchors.margins: 3
         fillMode: Image.PreserveAspectFit
     }
-
     background: Rectangle {
         color: "transparent"
         radius: width / 2;
@@ -20,6 +21,7 @@ Button {
 
         MouseArea {
             anchors.fill: parent
+            onClicked: controlButton.clicked()
             onPressedChanged: {
                 parent.color = (pressed) ? "grey" : "transparent";
             }

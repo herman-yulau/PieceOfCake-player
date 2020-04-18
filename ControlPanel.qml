@@ -7,6 +7,8 @@ import PieceOfCake.Style 1.0
 Item {
     id: root
 
+    signal playClicked()
+
     Rectangle {
         id: background
 
@@ -43,6 +45,7 @@ Item {
             Layout.preferredHeight: Style.ctrlIconSize * 1.2
             Layout.preferredWidth: Style.ctrlIconSize * 1.2
             imageSrc: Style.icons.play
+            onClicked: root.playClicked()
         }
 
         TimeBox {

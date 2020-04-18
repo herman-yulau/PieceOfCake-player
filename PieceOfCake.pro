@@ -21,7 +21,9 @@ PKGCONFIG = \
     gstreamer-video-1.0
 
 SOURCES += \
-        main.cpp
+        gsthandler.cpp \
+        main.cpp \
+        player.cpp
 
 RESOURCES += qml.qrc
 
@@ -41,3 +43,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 DISTFILES += \
     arch.qmodel
+
+HEADERS += \
+    gsthandler.h \
+    player.h
