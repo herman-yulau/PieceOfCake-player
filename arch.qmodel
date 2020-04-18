@@ -367,9 +367,130 @@
                       </DDependency>
                      </instance>
                     </item>
+                    <item>
+                     <instance type="DBoundary">
+                      <DBoundary>
+                       <base-DElement>
+                        <DElement>
+                         <uid>{19d41cb0-d327-401d-b5bc-3407e04dcab8}</uid>
+                        </DElement>
+                       </base-DElement>
+                       <text>Control Panel</text>
+                       <pos>x:210;y:530</pos>
+                       <rect>x:-165;y:-70;w:330;h:140</rect>
+                      </DBoundary>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DItem">
+                      <DItem>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{96234dc8-1081-4159-9042-d8789544255e}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{52c9988d-c677-4fee-a1f0-765924eb88c4}</object>
+                         <name>Root Item</name>
+                         <pos>x:210;y:540</pos>
+                         <rect>x:-155;y:-50;w:310;h:100</rect>
+                         <auto-sized>false</auto-sized>
+                         <visual-role>6</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <shape-editable>false</shape-editable>
+                      </DItem>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DItem">
+                      <DItem>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{7446d40d-142d-45e3-8f59-61f8760c0f1a}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{d22bac03-7184-4b95-9c88-191f9d7a9c60}</object>
+                         <name>Timeline</name>
+                         <pos>x:210;y:535</pos>
+                         <rect>x:-150;y:-15;w:300;h:30</rect>
+                         <auto-sized>false</auto-sized>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <shape-editable>false</shape-editable>
+                      </DItem>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DItem">
+                      <DItem>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{a95e1dcd-cc3d-44c9-8552-0b4187924c5c}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{d24aaa5c-5965-44ab-a092-a37759a78131}</object>
+                         <name>Buttons</name>
+                         <pos>x:90;y:570</pos>
+                         <rect>x:-30;y:-15;w:60;h:30</rect>
+                         <visual-role>8</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <shape-editable>false</shape-editable>
+                      </DItem>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DItem">
+                      <DItem>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{203fe681-2c95-4353-b82e-8a10b4f5676e}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{328887bf-6ff0-4c26-b04a-8639993faa17}</object>
+                         <name>Time Box</name>
+                         <pos>x:160;y:570</pos>
+                         <rect>x:-35;y:-15;w:70;h:30</rect>
+                         <visual-role>9</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <shape-editable>false</shape-editable>
+                      </DItem>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DItem">
+                      <DItem>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{cad95e95-93c6-4d16-8224-6923add39a9a}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{b381bc70-0b2c-40fd-b6d4-892d7d959a96}</object>
+                         <name>Buttons</name>
+                         <pos>x:330;y:570</pos>
+                         <rect>x:-30;y:-15;w:60;h:30</rect>
+                         <visual-role>8</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <shape-editable>false</shape-editable>
+                      </DItem>
+                     </instance>
+                    </item>
                    </qlist>
                   </elements>
-                  <last-modified>1586623341077</last-modified>
+                  <last-modified>1587218627027</last-modified>
                   <toolbarid>General</toolbarid>
                  </MDiagram>
                 </base-MDiagram>
@@ -847,6 +968,111 @@
                     </handles>
                    </handles>
                   </relations>
+                 </MObject>
+                </base-MObject>
+               </MItem>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{52c9988d-c677-4fee-a1f0-765924eb88c4}</uid>
+             <target>
+              <instance type="MItem">
+               <MItem>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{52c9988d-c677-4fee-a1f0-765924eb88c4}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>Root Item</name>
+                 </MObject>
+                </base-MObject>
+               </MItem>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{d22bac03-7184-4b95-9c88-191f9d7a9c60}</uid>
+             <target>
+              <instance type="MItem">
+               <MItem>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{d22bac03-7184-4b95-9c88-191f9d7a9c60}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>Timeline</name>
+                 </MObject>
+                </base-MObject>
+               </MItem>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{d24aaa5c-5965-44ab-a092-a37759a78131}</uid>
+             <target>
+              <instance type="MItem">
+               <MItem>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{d24aaa5c-5965-44ab-a092-a37759a78131}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>Buttons</name>
+                 </MObject>
+                </base-MObject>
+               </MItem>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{328887bf-6ff0-4c26-b04a-8639993faa17}</uid>
+             <target>
+              <instance type="MItem">
+               <MItem>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{328887bf-6ff0-4c26-b04a-8639993faa17}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>Time Box</name>
+                 </MObject>
+                </base-MObject>
+               </MItem>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{b381bc70-0b2c-40fd-b6d4-892d7d959a96}</uid>
+             <target>
+              <instance type="MItem">
+               <MItem>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{b381bc70-0b2c-40fd-b6d4-892d7d959a96}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>Buttons</name>
                  </MObject>
                 </base-MObject>
                </MItem>
