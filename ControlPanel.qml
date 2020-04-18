@@ -22,7 +22,7 @@ Item {
         anchors.top: parent.top
         anchors.left: parent.left
         anchors.right: parent.right
-        anchors.topMargin: 10
+        anchors.topMargin: 5
     }
 
     RowLayout {

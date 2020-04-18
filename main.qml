@@ -44,7 +44,7 @@ Window {
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.margins: 3
-        height: 90
+        height: 80
     }
 
     Shortcut {
