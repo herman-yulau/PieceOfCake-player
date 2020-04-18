@@ -48,7 +48,7 @@ Item {
         TimeBox {
             id: timebox
             Layout.preferredHeight: 40
-            Layout.preferredWidth: 210
+            Layout.preferredWidth: 125
         }
     }
 

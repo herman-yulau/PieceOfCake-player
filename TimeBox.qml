@@ -11,11 +11,11 @@ Item {
         anchors.fill: parent
         radius: 15
         gradient: Gradient {
-            GradientStop { position: 0; color: "violet" }
-            GradientStop { position: 1; color: "gray" }
+            GradientStop { position: 0; color: "#5b1991" }
+            GradientStop { position: 1; color: "#c812cf" }
         }
 
-        border.color: "black"
+        border.color: "#9f0aa3"
         border.width: 1
     }
 
@@ -27,8 +27,7 @@ Item {
 
         Label {
            id: timeElapsed
-//           width: 20
-           Layout.leftMargin: 10
+           Layout.leftMargin: 5
            color: "white"
            font.pixelSize: 12
            horizontalAlignment: Qt.AlignRight
@@ -43,15 +42,11 @@ Item {
            font.pixelSize: timeElapsed.font.pixelSize
            text: "00:00:00"
         }
-
-        ToolSeparator {}
-
-        Label {
-           id: timeTotal
-           color: "white"
-           font.pixelSize: timeElapsed.font.pixelSize
-           text: "00:00:00"
-        }
     }
-
 }
+
+/*##^##
+Designer {
+    D{i:0;autoSize:true;height:40;width:120}
+}
+##^##*/
