@@ -15,6 +15,7 @@ public:
     void setItemForSink(const QObject *item);
 
     void play() const;
+    void pause() const;
 
 signals:
 

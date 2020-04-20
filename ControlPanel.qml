@@ -8,6 +8,7 @@ Item {
     id: root
 
     signal playClicked()
+    signal pauseClicked()
 
     Rectangle {
         id: background
@@ -41,11 +42,19 @@ Item {
         }
 
         ControlButton {
-            id: btPlay
+            id: btPlayPause
             Layout.preferredHeight: Style.ctrlIconSize * 1.2
             Layout.preferredWidth: Style.ctrlIconSize * 1.2
             imageSrc: Style.icons.play
-            onClicked: root.playClicked()
+            onClicked: {
+                if (imageSrc == Style.icons.play) {
+                    imageSrc = Style.icons.pause;
+                    root.playClicked()
+                } else {
+                    imageSrc = Style.icons.play;
+                    root.pauseClicked()
+                }
+            }
         }
 
         TimeBox {

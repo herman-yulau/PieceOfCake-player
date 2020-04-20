@@ -12,5 +12,10 @@ void Player::setItemForSink(const QObject *item)
 
 void Player::play() const
 {
-   gstHnd.play();
+    gstHnd.play();
+}
+
+void Player::pause() const
+{
+   gstHnd.pause();
 }

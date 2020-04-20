@@ -33,6 +33,7 @@ Window {
         height: 80
 
         onPlayClicked: player.play()
+        onPauseClicked: player.pause()
     }
 
     Shortcut {

@@ -22,18 +22,13 @@ void GstHandler::initGst()
     qDebug("gst init...");
     gst_init (NULL, NULL);
 
-    pipeline = gst_parse_launch("videotestsrc ! glupload ! qmlglsink name=qs", NULL);
-
-//    GstElement *src = gst_element_factory_make ("videotestsrc", NULL);
-//    GstElement *glupload = gst_element_factory_make ("glupload", NULL);
-    /* the plugin must be loaded before loading the qml file to register the
-    * GstGLVideoItem qml item */
-//    GstElement *sink = gst_element_factory_make ("qmlglsink", NULL);
-
-//    g_assert (src && glupload && sink);
-
-//    gst_bin_add_many (GST_BIN (pipeline), src, glupload, sink, NULL);
-//    gst_element_link_many (src, glupload, sink, NULL);
+    pipeline = gst_parse_launch("uridecodebin uri=file:///home/herman/Videos/test_video.mkv name=file ! "                               // read file
+                                "queue ! audioconvert ! audioresample ! autoaudiosink "                                                 // audio
+                                "textoverlay name=sub1 shaded-background=yes valignment=bottom textoverlay name=sub2 valignment=top "   // elements for subs
+                                "file.src_0 ! queue ! sub1.video_sink file.src_5 ! sub1.text_sink "                                     // video and sub track 1 to sub1
+                                "file.src_4 ! sub2.text_sink "                                                                          // sub track 2 to sub2
+                                "sub1. ! sub2.video_sink "                                                                              // video with sub1 to sub2
+                                "sub2. ! videoconvert ! glupload ! qmlglsink name=qs", NULL);                                           // from sub2 to qmlglsink
 }
 
 void GstHandler::setItemForSink(const QObject *item)
@@ -51,4 +46,11 @@ void GstHandler::play() const
     qDebug("play");
     if (this->pipeline)
         gst_element_set_state (this->pipeline, GST_STATE_PLAYING);
+}
+
+void GstHandler::pause() const
+{
+    qDebug("pause");
+    if (this->pipeline)
+        gst_element_set_state (this->pipeline, GST_STATE_PAUSED);
 }
