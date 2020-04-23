@@ -11,8 +11,9 @@ public:
     explicit GstHandler(QObject *parent = nullptr);
     ~GstHandler();
 
-    void initGst();
+    int initGst();
     void setItemForSink(const QObject *item);
+    GstElement *getPipeline() const;
 
     void play() const;
     void pause() const;
