@@ -23,7 +23,7 @@ int GstHandler::initGst()
 {
     qDebug("gst init...");
     GstElement *uridecodebin, *queue_audio, *audioconvert, *audioresample, *autoaudiosink, *firstSub,
-               *secondSub, *queue_video, *videoconvert, *glupload, *qmlglsink;
+               *secondSub, *queue_video, *videoconvert, *glupload, *glsinkbin, *qmlglsink;
 
     gst_init (NULL, NULL);
 
@@ -38,20 +38,25 @@ int GstHandler::initGst()
     secondSub = gst_element_factory_make("textoverlay", "second_sub");
     videoconvert = gst_element_factory_make("videoconvert", "vidconv");
     glupload = gst_element_factory_make("glupload", "glupload");
+    glsinkbin = gst_element_factory_make("glsinkbin", "sinkbin");
     qmlglsink = gst_element_factory_make("qmlglsink", "qsink");
 
     pipeline = gst_pipeline_new("pipeline");
 
     // init check
     if (!pipeline || !uridecodebin || !queue_audio || !queue_video || !audioconvert || !audioresample || !autoaudiosink ||
-        !firstSub || !secondSub || !videoconvert || !glupload || !qmlglsink) {
+        !firstSub || !secondSub || !videoconvert || !glupload || !glsinkbin || !qmlglsink) {
         g_printerr ("Not all elements could be created.\n");
+        gst_object_unref(pipeline);
         return -1;
     }
 
+    // set sink in sink bin as qmlglsink
+    g_object_set(glsinkbin, "sink", qmlglsink, NULL);
+
     // add all elements in the pipeline
     gst_bin_add_many(GST_BIN(pipeline), uridecodebin, queue_audio, queue_video, audioconvert, audioresample, autoaudiosink,
-                     firstSub, secondSub, videoconvert, glupload, qmlglsink, NULL);
+                     firstSub, secondSub, videoconvert, glupload, glsinkbin, NULL);
 
     // link audio
     if (gst_element_link_many(queue_audio, audioconvert, audioresample, autoaudiosink, NULL) != true) {
@@ -61,8 +66,9 @@ int GstHandler::initGst()
     }
 
     // link video
-    if (gst_element_link_many(queue_video, firstSub, secondSub, videoconvert, glupload, qmlglsink, NULL) != true) {
+    if (gst_element_link_many(queue_video, firstSub, secondSub, videoconvert, glsinkbin, NULL) != true) {
         g_printerr("Video elements could not be linked.\n");
+        gst_object_unref(pipeline);
         return -1;
     }
 
@@ -83,11 +89,16 @@ int GstHandler::initGst()
 void GstHandler::setItemForSink(const QObject *item)
 {
     qDebug("Set item for sink");
-    GstElement *qmlSink;
-    qmlSink = gst_bin_get_by_name(GST_BIN(pipeline), "qsink");
-    g_assert(qmlSink);
-    gst_object_unref (qmlSink);
-    g_object_set(qmlSink, "widget", item, NULL);
+    GstElement *qSink, *sinkbin;
+
+    sinkbin = gst_bin_get_by_name(GST_BIN(pipeline), "sinkbin");
+    g_assert(sinkbin);
+    qSink = gst_bin_get_by_name(GST_BIN_CAST(sinkbin), "sink");
+    g_assert(qSink);
+    g_object_set(qSink, "widget", item, NULL);
+
+    gst_object_unref (qSink);
+    gst_object_unref (sinkbin);
 }
 
 GstElement *GstHandler::getPipeline() const
